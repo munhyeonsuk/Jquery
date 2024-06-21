@@ -91,12 +91,29 @@
             </div>
           </nav>
     </header>
+    <section style="height: 300vh;"></section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!-- 자바스크립트 돌리려고 -->
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <!-- 제이쿼리 돌리려고 -->
 
     <!-- ajax 실행식 넣기 -->
+    <script>
+        //section에 class 넣기
+        $("section").attr('class', 'bg-white')
+
+        // h1에 있는 것을 section에 넣기
+        $("section").html($("h1").html());
+        // 클래스 bg-dark 것을 section에 넣기 append 이어서(그냥 html 넣으면 초기화하고 삽입)
+        $("section").append($(".bg-dark").html());
+
+        $(window).on('scroll', ()=>{
+            // 스크롤 할때마다 실행해
+            $("body").attr("data-position", $(window).scrollTop())
+        })
+        // 자바스크립트의 addEventListener가 제이쿼리에서 on / 자바스크립트 setAttribute는 제이쿼리에서 attr: 속성을 만들고 값을 넣음
+    </script>
+
   </body>
 </body>
 </html>
